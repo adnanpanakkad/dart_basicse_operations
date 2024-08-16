@@ -1,5 +1,13 @@
+int fibinacci(int n) {
+  if (n <= 1) {
+    return n;
+  }
+  return fibinacci(n - 1) + fibinacci(n - 2);
+}
+
 void main() {
-  List arr = [1, 2, 3, 4, 5];
-  
-  print(arr);
+  int num = 10;
+  for (int i = 0; i <= num; i++) {
+    print(fibinacci(i));
+  }
 }
