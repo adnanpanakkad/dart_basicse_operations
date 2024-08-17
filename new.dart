@@ -1,13 +1,22 @@
-int fibinacci(int n) {
-  if (n <= 1) {
-    return n;
-  }
-  return fibinacci(n - 1) + fibinacci(n - 2);
+class Node {
+  int? data;
+  Node? next;
+  Node(this.data);
 }
 
-void main() {
-  int num = 10;
-  for (int i = 0; i <= num; i++) {
-    print(fibinacci(i));
+class LinkidList {
+  Node? head;
+  Node? tail;
+  void adddata(int data) {
+    Node newnode = Node(data);
+    if (head == null) {
+      head = newnode;
+    } else {
+      tail!.next = newnode;
+    }
+    tail = newnode;
+  }
+  printlist(){
+    
   }
 }
