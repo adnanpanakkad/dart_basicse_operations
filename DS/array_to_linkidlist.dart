@@ -26,8 +26,8 @@ class LinkidList {
     }
   }
 
-  // Method to convert an array to a linked list
-  void fromArray(List<int> array) {
+
+void fromArray(List<int> array) {
     for (var value in array) {
       addValue(value);
     }
