@@ -1,7 +1,8 @@
 void main() {
-  print(myname!.length);
+  String name = '1245';
+  int age = int.parse(name);
+  print(age);
+  funxctionsd(12, name: 'name');
 }
 
-String? name;
-
-String? myname = name ?? 'no name';
+void funxctionsd(int? age, {required String? name}) {}

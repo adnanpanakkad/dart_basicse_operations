@@ -8,5 +8,7 @@ void main() {
   // bck117.remove("razal");
   // bck117.clear();
   // bck117.removeWhere((key, value) => key == 'razal');
+  // var key =  bck117.containsKey('amel');
+  // var value =  bck117.containsValue('amel');
   print(bck117);
 }
