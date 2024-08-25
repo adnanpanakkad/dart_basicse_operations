@@ -18,7 +18,7 @@ class SLinkedList {
       tail!.next = newnode;
       newnode.prev = tail;
     }
-      tail = newnode;
+    tail = newnode;
   }
 
   reverse() {
@@ -50,4 +50,5 @@ void main() {
 
   print("reversed");
   print(sll.reverse());
+  sll.display();
 }
