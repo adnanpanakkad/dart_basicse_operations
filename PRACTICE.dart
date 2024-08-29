@@ -1,14 +1,9 @@
-class Car {
-  int? model;
-  String? name;
-  Car() {
-    model = 1234;
-    name = 'totyota';
-  }
+Future<void> fechtdata() async {
+  return Future.delayed(Duration(seconds: 2), () {});
 }
 
 void main() {
-  Car car = Car();
-  print(car.name);
-  print(car.model);
+  fechtdata().whenComplete(() {
+    print('object');
+  });
 }

@@ -1,11 +1,16 @@
-Future<int> fetchNumber() async {
-  return Future.delayed(Duration(seconds: 2), () => 42);
+Future<void> fetchData() async {
+  return Future.delayed(Duration(seconds: 2), () {
+    print('Data fetched');
+    // Uncomment the line below to simulate an error
+    // throw 'An error occurred';
+  });
 }
 
 void main() {
-  fetchNumber().whenComplete(() {
-    print('Done fetching!');
+  fetchData().whenComplete(() {
+    print(
+        'Fetch operation completed'); // Runs after the Future completes, regardless of success or failure
   });
 
-  print('Waiting for the number...');
+  print('Fetching data...');
 }

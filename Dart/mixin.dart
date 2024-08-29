@@ -25,4 +25,5 @@ void main() {
   human.AnimalHello();
   human.Animal1Hello();
   human.Animal2Hello();
+  human.hello();
 }
