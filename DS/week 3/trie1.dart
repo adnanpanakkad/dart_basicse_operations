@@ -5,10 +5,10 @@ class Node {
 
 class Trie {
   Node root = Node();
-  insert(String string) {
+  insert(String word) {
     Node? node = root;
-    for (int i = 0; i < string.length; i++) {
-      var char = string[i];
+    for (int i = 0; i < word.length; i++) {
+      var char = word[i];
       if (!node!.children.containsKey(char)) {
         node.children[char] = Node();
       }
@@ -79,4 +79,14 @@ class Trie {
     }
     lastnode.children.remove(flag);
   }
+}
+void main() {
+  var trie = Trie();
+  trie.insert("hello");
+  trie.insert("world");
+
+  print(trie.search("hello")); // Output: true
+  print(trie.search("world")); // Output: true
+  print(trie.search("hi")); // Output: false
+  print(trie.search("he")); // Output: false
 }
