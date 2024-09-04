@@ -1,6 +1,7 @@
+
 class Node {
   Map<String, Node> children = {};
-  bool isWord = false;
+  bool isword = false;
 }
 
 class Trie {
@@ -8,13 +9,13 @@ class Trie {
   insert(String word) {
     Node? node = root;
     for (int i = 0; i < word.length; i++) {
-      //var char = word[i];
-      if (!node!.children.containsKey(word[i])) {
-        node.children[word[i]] = Node();
+      var char = word[i];
+      if (!node!.children.containsKey(char)) {
+        node.children[char] = Node();
       }
-      node = node.children[word[i]];
+      node = node.children[char];
     }
-    node!.isWord = true;
+    node!.isword = true;
   }
 
   search(String str) {
@@ -25,12 +26,12 @@ class Trie {
       }
       node = node.children[str[i]]!;
     }
-    return node.isWord;
+    return node.isword;
   }
 }
 
 void main() {
-  Trie tri = Trie();
-  tri.insert('hello');
-  print(tri.search("hello"));
+  Trie trie = Trie();
+  trie.insert('word');
+  print(trie.search('word'));
 }

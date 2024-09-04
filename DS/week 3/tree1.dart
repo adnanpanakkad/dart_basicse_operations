@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 class Node {
@@ -7,7 +6,7 @@ class Node {
   Node? right;
   Node(this.data);
 }
-//its a binary search tree 
+//its a binary search tree
 //which is its left child will be lesser than the parent and right child will be larger than the parent
 
 class Tree {
@@ -79,7 +78,7 @@ class Tree {
         } else if (node.right == null) {
           return node.left;
         }
-        node.data = findMinNode(node.right).data;  
+        node.data = findMinNode(node.right).data;
         node.right = delete(node.right, node.data);
       }
     }
@@ -87,62 +86,46 @@ class Tree {
   }
 
 //to find the closest value to the target value
-closesthelper(int target)
-{
- var close=closestVal(root, target, root!.data);
- print('');
- if(close!=0)
- print('closest : $close');
-}
+  closesthelper(int target) {
+    var close = closestVal(root, target, root!.data);
+    print('');
+    if (close != 0) print('closest : $close');
+  }
 
-int closestVal(Node? node,int target,int closest)
-{
-  if(node!=null)
-  {
-    if((target-node.data).abs()<(closest-target).abs()) 
-    {
-      closest=node.data;
+  int closestVal(Node? node, int target, int closest) {
+    if (node != null) {
+      if ((target - node.data).abs() < (closest - target).abs()) {
+        closest = node.data;
+      }
+      closest = closestVal(node.left, target, closest);
+      closest = closestVal(node.right, target, closest);
     }
-   closest= closestVal(node.left,target,closest);
-   closest=  closestVal(node.right, target, closest);
+
+    return closest;
   }
 
-  return closest;
-
-}
-
-bstornothelper()
-{
-  if(bstornot(root, true))
-  print('its a bst');
-  else
-  print('its not a bst');
-}
-
-bool bstornot(Node? node,bool bst)
-{
-  if(bst)
-  {
-
-if(node!=null)
-{
-  if(node.right!=null)
-  {
-  bst=bstornot(node.right,bst);
-  if(bst)
-  bst=node.right!.data>node.data;
+  bstornothelper() {
+    if (bstornot(root, true))
+      print('its a bst');
+    else
+      print('its not a bst');
   }
-  if(node.left!=null)
-  {
-  bst=bstornot(node.left,bst);
-  if(bst)
-  bst=node.left!.data<node.data;
-  }
-}
-  }
-return bst;
-}
 
+  bool bstornot(Node? node, bool bst) {
+    if (bst) {
+      if (node != null) {
+        if (node.right != null) {
+          bst = bstornot(node.right, bst);
+          if (bst) bst = node.right!.data > node.data;
+        }
+        if (node.left != null) {
+          bst = bstornot(node.left, bst);
+          if (bst) bst = node.left!.data < node.data;
+        }
+      }
+    }
+    return bst;
+  }
 
 //to find the min value inside a tree
   findMinNode(root) {
@@ -151,4 +134,11 @@ return bst;
     }
     return root;
   }
+}
+
+void main() {
+  Tree tree = Tree();
+  tree.insert(12);
+  tree.insert(12);
+  tree.insert(12);
 }
