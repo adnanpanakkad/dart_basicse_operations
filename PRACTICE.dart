@@ -1,4 +1,3 @@
-
 class Node {
   Map<String, Node> children = {};
   bool isword = false;
@@ -31,7 +30,7 @@ class Trie {
 }
 
 void main() {
-  Trie trie = Trie();
-  trie.insert('word');
-  print(trie.search('word'));
+  Trie tri = Trie();
+  tri.insert('word');
+  print(tri.search('word'));
 }
