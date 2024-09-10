@@ -1,6 +1,9 @@
+class Person {
+  String? name ='sdfg';
+}
 
 void main() {
-  String? name;
-  int? leg = name?.length;
-  print(name?.length);
+  Person? person = null;
+  // Using ?. to safely access the name property
+  print(person?.name); // Output: null
 }
