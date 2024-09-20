@@ -11,13 +11,9 @@ List<int>? twoSum(List<int> nums, int target) {
 
 void main() {
   List<int> nums = [2, 7, 11, 15];
-  int target = 9;
+  int target = 26;
 
   List<int>? result = twoSum(nums, target);
 
-  if (result != null) {
-    print('Indices: ${result[0]}, ${result[1]}'); // Output: Indices: 0, 1
-  } else {
-    print('No two numbers add up to the target.');
-  }
+  print(result);
 }

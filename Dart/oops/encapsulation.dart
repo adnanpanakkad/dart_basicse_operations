@@ -1,33 +1,28 @@
 class BankAccount {
-  // Private property, not accessible directly from outside the class
-  double _balance;
+  double _balance;  // Corrected the spelling of "balance"
 
-  // Constructor to initialize balance
   BankAccount(this._balance);
+  
+  // Getter for balance
+  double get balance => _balance; // Read-only access
 
-  // Getter to retrieve the balance
-  double get balance => _balance;
-
-  // Method to deposit money
   void deposit(double amount) {
-    if (amount > 0) {
-      _balance += amount;
+    _balance += amount;
+  }
+
+  void withdraw(double amount) {
+    if (amount <= _balance) {
+      _balance -= amount;
+    } else {
+      print('Insufficient funds');
     }
   }
 
-  // Method to withdraw money
-  void withdraw(double amount) {
-    if (amount > 0 && amount <= _balance) {
-      _balance -= amount;
-    }
-  }
 }
 
 void main() {
-  BankAccount account = BankAccount(1000.0);
-  
-  account.deposit(500.0);
-  account.withdraw(200.0);
-  
-  print('Account balance: ${account.balance}'); // Output: Account balance: 1300.0
+  BankAccount account = BankAccount(1240);
+  account.deposit(12);
+  account.withdraw(52);
+  print('Current Balance: \$${account.balance}'); // Accessing balance via the getter
 }

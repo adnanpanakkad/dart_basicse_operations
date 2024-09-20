@@ -1,11 +1,11 @@
 String removeDuplicates(String s) {
-  Map<String, bool> seen = {};
+  Map<String, bool> arr = {};
   String result = "";
 
   for (int i = 0; i < s.length; i++) {
     String currentChar = s[i];
-    if (!seen.containsKey(currentChar)) {
-      seen[currentChar] = true;
+    if (!arr.containsKey(currentChar)) {
+      arr[currentChar] = true;
       result += currentChar;
     }
   }
