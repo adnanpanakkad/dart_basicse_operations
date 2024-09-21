@@ -1,26 +1,16 @@
-List<List<dynamic>> findFrequency(List<dynamic> list) {
-  List<List<dynamic>> frequencyList = [];
+void main() {
+  List<int> numbers = [1, 5, 10, 12, 5, 20, 5, 30, 35, 5, 50];
+  int target = 12;
+  print(findFrequency(numbers, target));
+}
 
-  for (int i = 0; i < list.length; i++) {
-    bool found = false;
-
-    for (int j = 0; j < frequencyList.length; j++) {
-      if (frequencyList[j][0] == list[i]) {
-        frequencyList[j][1]++;
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
-      frequencyList.add([list[i], 1]);
+int findFrequency(List<int> arr, int target) {
+  int frq = 0;
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i] == target) {
+      frq++;
     }
   }
 
-  return frequencyList;
-}
-
-void main() {
-  List nums = [1, 2, 3, 1, 6, 1, 8, 2, 4];
-  print(findFrequency(nums));
+  return frq;
 }

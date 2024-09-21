@@ -1,11 +1,12 @@
 bool isValid(String s) {
   List<String> stack = [];
 
-  Map<String, String> Brackets = {
+  Map  Brackets = {
     ')': '(',
     ']': '[',
     '}': '{',
   };
+
 
   for (int i = 0; i < s.length; i++) {
     String char = s[i];
@@ -24,6 +25,6 @@ bool isValid(String s) {
 }
 
 void main() {
-  String s = '{()}[]';
+  String s = '{[()]}';
   print(isValid(s));
 }

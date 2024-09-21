@@ -1,36 +1,26 @@
-class Node {
-  Map<String, Node> children = {};
-  bool isword = false;
-}
+bool isvalid(String s) {
+  List arr = [];
+  Map<String, String> brackets = {
+    ')': '(',
+    ']': '[',
+    '}': '{',
+  };
 
-class Trie {
-  Node root = Node();
-  insert(String word) {
-    Node? node = root;
-    for (int i = 0; i < word.length; i++) {
-      var char = word[i];
-      if (!node!.children.containsKey(char)) {
-        node.children[char] = Node();
-      }
-      node = node.children[char]!;
-    }
-    node!.isword = true;
-  }
-
-  search(String str) {
-    Node node = root;
-    for (int i = 0; i < str.length; i++) {
-      if (!node.children.containsKey(str[i])) {
+  for (int i = 0; i < s.length; i++) {
+    var char = s[i];
+    if (brackets.containsValue(char)) {
+      arr.add(char);
+    } else if (brackets.containsKey(char)) {
+      if (arr.isEmpty || arr.last != brackets[char]) {
         return false;
       }
-      node = node.children[str[i]]!;
+      arr.removeLast();
     }
-    return node.isword;
   }
+  return arr.isEmpty;
 }
 
 void main() {
-  Trie trie = Trie();
-  trie.insert('word');
-  print(trie.search('word'));
+  String s = '{}';
+  print(isvalid(s));
 }
