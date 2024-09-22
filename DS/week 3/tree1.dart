@@ -139,6 +139,7 @@ class Tree {
 void main() {
   Tree tree = Tree();
   tree.insert(12);
-  tree.insert(12);
-  tree.insert(12);
+  tree.insert(15);
+  tree.insert(14);
+  tree.postorder_traversal(tree.root);
 }

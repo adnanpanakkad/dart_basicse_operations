@@ -15,5 +15,5 @@ String removeDuplicates(String s) {
 
 void main() {
   String input = "ppproogramming";
-  print(removeDuplicates(input)); // Output: "progamin"
+  print(removeDuplicates(input));
 }
