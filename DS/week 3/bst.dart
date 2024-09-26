@@ -1,29 +1,3 @@
-void main() {
-  BinarySearch bst = BinarySearch();
-  bst.root = bst.insert(bst.root, 15);
-  bst.root = bst.insert(bst.root, 8);
-  bst.root = bst.insert(bst.root, 18);
-  bst.root = bst.insert(bst.root, 25);
-  bst.root = bst.insert(bst.root, 4);
-  bst.root = bst.insert(bst.root, 7);
-  bst.root = bst.insert(bst.root, 10);
-  bst.root = bst.delete(bst.root, 8);
-  bst.preorder(bst.root);
-
-  print('post order');
-  bst.postorder(bst.root);
-  print('in order');
-  bst.inorder(bst.root);
-
-  print('contains :${bst.contains(bst.root, 111)}');
-  print('min val :${bst.findmin(bst.root)}');
-  print('find amx :${bst.fintmax(bst.root)}');
-
-  print('count : ${bst.count(bst.root)}');
-
-  print('hight : ${bst.height(bst.root)}');
-}
-
 class Node {
   int? value;
   Node? left;
@@ -137,20 +111,40 @@ class BinarySearch {
     return min;
   }
 
-   height(Node? root){
-    if (root==null) {
+  height(Node? root) {
+    if (root == null) {
       return 0;
+    } else {
+      int lefthight = height(root.left);
+      int righthight = height(root.right);
+
+      return (lefthight > righthight) ? (lefthight + 1) : (righthight + 1);
     }
-    else{
-      int lefthight =height(root.left);
-      int righthight =height(root.right);
-      
-
-      return (lefthight>righthight) ? (lefthight+1):(righthight+1);
-
-    }
-
-    
-
   }
+}
+
+void main() {
+  BinarySearch bst = BinarySearch();
+  bst.root = bst.insert(bst.root, 15);
+  bst.root = bst.insert(bst.root, 8);
+  bst.root = bst.insert(bst.root, 18);
+  bst.root = bst.insert(bst.root, 25);
+  bst.root = bst.insert(bst.root, 4);
+  bst.root = bst.insert(bst.root, 7);
+  bst.root = bst.insert(bst.root, 10);
+  bst.root = bst.delete(bst.root, 8);
+  bst.preorder(bst.root);
+
+  print('post order');
+  bst.postorder(bst.root);
+  print('in order');
+  bst.inorder(bst.root);
+
+  print('contains :${bst.contains(bst.root, 111)}');
+  print('min val :${bst.findmin(bst.root)}');
+  print('find amx :${bst.fintmax(bst.root)}');
+
+  print('count : ${bst.count(bst.root)}');
+
+  print('hight : ${bst.height(bst.root)}');
 }
