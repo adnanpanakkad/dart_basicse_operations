@@ -2,11 +2,11 @@ Map<String, int> findCharOccurrences(String word) {
   Map<String, int> charCount = {};
 
   for (int i = 0; i < word.length; i++) {
-    String currentChar = word[i];
-    if (charCount.containsKey(currentChar)) {
-      charCount[currentChar] = charCount[currentChar]! + 1;
+    String char = word[i];
+    if (charCount.containsKey(char)) {
+      charCount[char] = charCount[char]! + 1;
     } else {
-      charCount[currentChar] = 1;
+      charCount[char] = 1;
     }
   }
 
