@@ -28,7 +28,7 @@ class LinkidList {
 
 
 void fromArray(List<int> array) {
-    for (var value in array) {
+    for (int value in array) {
       addValue(value);
     }
   }
