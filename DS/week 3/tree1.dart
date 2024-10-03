@@ -14,14 +14,13 @@ class Tree {
   Tree();
 
 //insertion
-  void insert(int value) {
-    root = insertRec(root, value);
-  }
+  // void insert(int value) {
+  //   root = insertRec(root, value);
+  // }
 
   Node insertRec(Node? node, int data) {
     if (node == null) {
-      node = Node(data);
-      return node;
+      return Node(data);
     }
 
     if (data < node.data) {
@@ -138,8 +137,7 @@ class Tree {
 
 void main() {
   Tree tree = Tree();
-  tree.insert(12);
-  tree.insert(15);
-  tree.insert(14);
+  tree.root = tree.insertRec(tree.root, 12);
+
   tree.postorder_traversal(tree.root);
 }
