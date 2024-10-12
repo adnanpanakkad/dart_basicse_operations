@@ -1,36 +1,18 @@
-class Node {
-  Map<String, Node> children = {};
-  bool isword = false;
-}
-
-class Trie {
-  Node root = Node();
-  insert(String word) {
-    Node? node = root;
-    for (int i = 0; i < word.length; i++) {
-      var char = word[i];
-      if (!node!.children.containsKey(char)) {
-        node.children[char] = Node();
-      }
-      node = node.children[char];
-    }
-    node!.isword = true;
+bool isprime(int num, int divs) {
+  if (num <= 1) {
+    return false;
   }
-
-  search(String str) {
-    Node node = root;
-    for (int i = 0; i < str.length; i++) {
-      if (!node.children.containsKey(str[i])) {
-        return false;
-      }
-      node = node.children[str[i]]!;
-    }
-    return node.isword;
+  if (divs == 1) {
+    return true;
   }
+  if (num % divs == 0) {
+    return false;
+  }
+  return isprime(num, divs - 1);
 }
 
 void main() {
-  Trie trie = Trie();
-  trie.insert('mam');
-  print(trie.search('mam'));
+  int num = 11;
+  bool result = isprime(num, num ~/ 2);
+  print(result);
 }
