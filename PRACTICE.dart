@@ -1,18 +1,14 @@
-bool isprime(int num, int divs) {
-  if (num <= 1) {
-    return false;
-  }
-  if (divs == 1) {
-    return true;
-  }
-  if (num % divs == 0) {
-    return false;
-  }
-  return isprime(num, divs - 1);
+void main() {
+  List<int> arr1 = [7, 2, 9, 4, 1, 8, 78, 7];
+  List<int> arr2 = [5, 9, 12, 7, 14, 7];
+  List<int> result = findduplicate(arr1, arr2);
+  print(result);
 }
 
-void main() {
-  int num = 11;
-  bool result = isprime(num, num ~/ 2);
-  print(result);
+List<int> findduplicate(List<int> arr1, List<int> arr2) {
+  Set<int> set1 = arr1.toSet();
+  Set<int> set2 = arr2.toSet();
+
+  Set<int> commonvalue = set1.intersection(set2);
+  return commonvalue.toList();
 }
