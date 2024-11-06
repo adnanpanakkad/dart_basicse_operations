@@ -1,6 +1,6 @@
 void main() {
   List<int> numbers = [1, 5, 10, 12, 5, 20, 5, 30, 35, 5, 50];
-  int target = 12;
+  int target = 5;
   print(findFrequency(numbers, target));
 }
 
