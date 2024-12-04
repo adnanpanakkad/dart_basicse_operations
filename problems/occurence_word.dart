@@ -16,7 +16,6 @@ Map<String, int> findCharOccurrences(String word) {
 void main() {
   String input = "programming";
   Map<String, int> occurrences = findCharOccurrences(input);
-
   occurrences.forEach((char, count) {
     print('$char: $count');
   });
