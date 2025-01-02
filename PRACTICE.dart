@@ -1,20 +1,8 @@
 void main() {
-  List<Map<String, dynamic>> list = [
-    {
-      'id': 1,
-      'name': 'adnan',
-    },
-    {
-      'id': 2,
-      'name': 'basil',
-    },
-    {
-      'id': 3,
-      'name': 'cat',
-    },
-  ];
-  List<Map<String, dynamic>> result = list.map((items) {
-    return {'id': items['id']};
-  }).toList();
-  print(result);
+  List<int> arr = [1, 2, 3, 4, 5, 6]; // Specify type for better safety
+  for (int i = 0; i < arr.length - 1; i++) { // Use < arr.length - 1
+    if (arr[i + 1] != 0 && arr[i] % arr[i + 1] == 0) { // Avoid division by zero
+      print(arr[i]);
+    }
+  }
 }
