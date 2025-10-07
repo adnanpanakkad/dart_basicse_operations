@@ -1,5 +1,5 @@
 class BankAccount {
-  double _balance;  // Corrected the spelling of "balance"
+  double _balance;  
 
   BankAccount(this._balance);
   
